@@ -49,12 +49,6 @@ module.exports = {
           options: {
             cacheDirectory: true,
           },
-        }, {
-          loader: 'ts-loader',
-          options: {
-            appendTsSuffixTo: [/\.vue$/],
-            happyPackMode: true,
-          },
         }],
       },
       // js

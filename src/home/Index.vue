@@ -2,10 +2,11 @@
   <div class="cnt">
     <Header></Header>
     <div>
-      <a href="/test/list/321">当前页跳转</a>
-      <a href="/test/detail/123" target="_blank">新开页面跳转</a>
+      <!-- <a href="/test/list/321">当前页跳转</a>
+      <a href="/test/detail/123" target="_blank">新开页面跳转</a> -->
       <button @click="onClickJump">当前页跳转</button>
       <button @click="onClickOpen">新开页面跳转</button>
+      <div class="map-wrapper"><indoorMap /></div>
     </div>
     <!-- vue-improve-loader -->
     <div check-reduce>
@@ -32,6 +33,7 @@ import Header from '../common/Header.vue'
 import Footer from '../common/Footer.vue'
 import Web from 'reduce-loader!../common/Web.vue'
 import 'reduce-loader!./web'
+import indoorMap from '../map/index.vue'
 
 export default Vue.extend({
   name: 'Home',
@@ -39,8 +41,9 @@ export default Vue.extend({
     Header,
     Footer,
     Web,
+    indoorMap
   },
-  created() {
+  created () {
     window.addEventListener('wxload', query => console.log('page1 wxload', query))
     window.addEventListener('wxshow', () => console.log('page1 wxshow'))
     window.addEventListener('wxready', () => console.log('page1 wxready'))
@@ -54,11 +57,11 @@ export default Vue.extend({
     }
   },
   methods: {
-    onClickJump() {
+    onClickJump () {
       window.location.href = '/test/list/123'
     },
 
-    onClickOpen() {
+    onClickOpen () {
       window.open('/test/detail/123')
     },
   },
@@ -66,6 +69,12 @@ export default Vue.extend({
 </script>
 
 <style lang="less">
+.map-wrapper {
+  width: 100%;
+  height: 320px;
+  background: #fff000;
+}
+
 .cnt {
   margin-top: 20px;
 }

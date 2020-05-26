@@ -12,7 +12,7 @@ export default {
   computed: {
     ...mapState(['headerTips', 'input']),
   },
-  mounted() {
+  mounted () {
     this.FAKE_ACTION('june')
   },
   methods: {
